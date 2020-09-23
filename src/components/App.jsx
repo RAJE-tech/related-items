@@ -1,7 +1,10 @@
 import React from 'react';
+import ProductCard from './ProductCard.jsx'
 
 const App = () => (
-  <h1>Hello World!</h1>
+  <div>
+    <ProductCard></ProductCard>
+  </div>
 );
 
 export default App;
