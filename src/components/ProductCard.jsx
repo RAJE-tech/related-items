@@ -13,7 +13,7 @@ class ProductCard extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <Card style={{ width: '18rem' }}>
         <CardImg variant="top" src="https://picsum.photos/200" />
         <CardBody class='card-b'>
