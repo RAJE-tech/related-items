@@ -1,10 +1,10 @@
 .card-b {
-  padding: 0px
+  padding: 10px
 }
 
 .text-pc {
   font-family: Helvetica;
-  font-size: .8rem;
+  font-size: .9rem;
   color: #5E5E5B;
   margin: 0px;
   padding-bottom: .3rem;
@@ -17,5 +17,11 @@
 }
 
 .stars-pc {
-  padding-top: 1em;
+  padding-top: .5em;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
