@@ -22,9 +22,14 @@ const App = () => {
   const handleActionBtn = (id, add) => {
     if (add) {
       // add id to outfit array
-      setOutfit([...outfitIds, id]);
+      let idx = outfitIds.indexOf(id);
+      if (idx === -1) {
+        setOutfit([...outfitIds, id]);
+      }
     } else {
-      console.log('removing');
+      let idx = outfitIds.indexOf(id);
+      outfitIds.splice(idx, 1);
+      setOutfit([...outfitIds]);
     }
   };
 
@@ -34,7 +39,7 @@ const App = () => {
 
   let outfits;
   if (outfitIds.length !== 0) {
-    outfits = <ItemDisplay ids={outfitIds} />;
+    outfits = <ItemDisplay ids={outfitIds} fav={true} handleActionBtn={handleActionBtn} />;
   } else {
     outfits = '';
   }
@@ -42,7 +47,7 @@ const App = () => {
     <div>
       <div className="container">
         <h1>Related Products</h1>
-        <ItemDisplay ids={relatedIds} handleActionBtn={handleActionBtn} />
+        <ItemDisplay ids={relatedIds} fav={false} handleActionBtn={handleActionBtn} />
       </div>
       <div className="container">
         <h1>Outfits</h1>

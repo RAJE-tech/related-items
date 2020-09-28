@@ -39,7 +39,7 @@ const ItemDisplay = (props) => {
         itemClass="carousel-item-padding-40-px"
       >
         {props.ids.map((id) =>
-          <ProductCard id={id} handleActionBtn={props.handleActionBtn} key={id} />,
+          <ProductCard id={id} fav={props.fav} handleActionBtn={props.handleActionBtn} key={id} />,
         )}
       </Carousel>
     </div>

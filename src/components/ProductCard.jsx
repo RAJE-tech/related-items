@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Rating from '@material-ui/lab/Rating';
-import { Star, StarFill } from 'react-bootstrap-icons';
 import {
   Card,
   CardImg,
   CardText,
   CardBody,
 } from 'reactstrap';
+import ActionBtn from './ActionBtn.jsx';
 
 const ProductCard = (props) => {
   // state vars
@@ -55,9 +55,13 @@ const ProductCard = (props) => {
       <Card style={{ height: '400px', width: '250px' }}>
         <div>
           <div className="click-icon" onClick={() => {
-            props.handleActionBtn(props.id, true);
+            if (props.fav === true) {
+              props.handleActionBtn(props.id, false);
+            } else {
+              props.handleActionBtn(props.id, true);
+            }
           }}>
-            <Star size={20} />
+            <ActionBtn fav={props.fav} />
           </div>
           <CardImg variant="top" src={photos[0].thumbnail_url} />
         </div>
