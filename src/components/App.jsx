@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from './ProductCard.jsx';
+import ItemDisplay from './ItemDisplay.jsx';
 
 const App = () => {
-  // state items:
   // current product id
   const [currId, setCurr] = useState(7);
   // realted product ids - array
   const [relatedIds, setRelated] = useState([]);
+  // outfit ids
+  const [outfitIds, setOutfit] = useState([]);
 
   // create function to get related ids
   const getRelated = () => {
@@ -17,15 +19,35 @@ const App = () => {
       });
   };
 
+  const handleActionBtn = (id, add) => {
+    if (add) {
+      // add id to outfit array
+      setOutfit([...outfitIds, id]);
+    } else {
+      console.log('removing');
+    }
+  };
+
   useEffect(() => {
     getRelated();
   }, []);
 
+  let outfits;
+  if (outfitIds.length !== 0) {
+    outfits = <ItemDisplay ids={outfitIds} />;
+  } else {
+    outfits = '';
+  }
   return (
     <div>
-      {relatedIds.map((id) =>
-        <ProductCard id={id} key={id} />,
-      )}
+      <div className="container">
+        <h1>Related Products</h1>
+        <ItemDisplay ids={relatedIds} handleActionBtn={handleActionBtn} />
+      </div>
+      <div className="container">
+        <h1>Outfits</h1>
+        {outfits}
+      </div>
     </div>
   );
 };

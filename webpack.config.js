@@ -1,5 +1,5 @@
 module.exports = {
-  entry: __dirname + '/src/index.js',
+  entry: __dirname + '/src/index.jsx',
   module: {
     rules: [
       {
@@ -7,9 +7,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          // options: {
-          //   presets: ['@babel/preset-react', '@babel/preset-env'],
-          // },
         },
       },
       {
@@ -19,8 +16,21 @@ module.exports = {
           'css-loader',
         ],
       },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
+      }
     ],
   },
+  watch: true,
   output: {
     filename: 'bundle.js',
     path: __dirname + '/dist',

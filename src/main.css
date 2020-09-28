@@ -1,27 +1,40 @@
-.card-b {
-  padding: 10px
-}
-
-.text-pc {
+h1 {
   font-family: Helvetica;
-  font-size: .9rem;
-  color: #5E5E5B;
-  margin: 0px;
-  padding-bottom: .3rem;
-}
-
-.title-pc {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #343434;
-}
-
-.stars-pc {
-  padding-top: .5em;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.2rem;
 }
 
 img {
   width: 250px;
   height: 250px;
   object-fit: cover;
+}
+
+.click-icon {
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+}
+
+.card-b {
+  padding: 10px
+}
+
+.text-pc {
+  font-family: Helvetica;
+  font-size: .8rem;
+  color: #5E5E5B;
+  margin: 0px;
+  padding-bottom: .3rem;
+}
+
+.title-pc {
+  font-size: .9rem;
+  font-weight: bold;
+  color: #343434;
+}
+
+.stars-pc {
+  padding-top: .5em;
 }

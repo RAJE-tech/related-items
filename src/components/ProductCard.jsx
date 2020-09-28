@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Rating from '@material-ui/lab/Rating';
+import { Star, StarFill } from 'react-bootstrap-icons';
 import {
   Card,
   CardImg,
@@ -44,28 +45,40 @@ const ProductCard = (props) => {
     getStyleInfo();
   }, []);
 
+  // if no imgage is found for a product
   if (photos[0].thumbnail_url === null) {
     photos[0].thumbnail_url = 'https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png';
   }
 
   return (
-    <Card style={{ width: '17rem' }}>
-      <CardImg variant="top" src={photos[0].thumbnail_url} />
-      <CardBody className="card-b">
-        <CardText className="text-pc">
-          {category}
-        </CardText>
-        <CardText className="text-pc title-pc">
-          {title + ' ' + style}
-        </CardText>
-        <CardText className="text-pc">
-          {`$${price}`}
-        </CardText>
-        <CardText className="text-pc stars-pc">
-          <Rating name="size-medium" defaultValue={3} readOnly={true} />
-        </CardText>
-      </CardBody>
-    </Card>
+    <div className="container">
+      <Card style={{ height: '400px', width: '250px' }}>
+        <div>
+          <div className="click-icon" onClick={() => {
+            props.handleActionBtn(props.id, true);
+          }}>
+            <Star size={20} />
+          </div>
+          <CardImg variant="top" src={photos[0].thumbnail_url} />
+        </div>
+        <div>
+          <CardBody className="card-b">
+            <CardText className="text-pc">
+              {category}
+            </CardText>
+            <CardText className="text-pc title-pc">
+              {title + ' ' + style}
+            </CardText>
+            <CardText className="text-pc">
+              {`$${price}`}
+            </CardText>
+            <CardText className="text-pc stars-pc">
+              <Rating name="size-small" defaultValue={3} readOnly={true} size="small" />
+            </CardText>
+          </CardBody>
+        </div>
+      </Card>
+    </div>
   );
 };
 
