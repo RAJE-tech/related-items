@@ -6,7 +6,7 @@ import OutfitDisplay from './OutfitDisplay.jsx';
 import CompareCard from './CompareCard.jsx';
 
 const App = () => {
-  const [currId, setCurr] = useState(7);
+  const [currId, setCurr] = useState(96);
   const [currName, setName] = useState('');
   const [compName, setCompName] = useState('');
   const [features, setFeat] = useState({});

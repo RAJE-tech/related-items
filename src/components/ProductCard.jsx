@@ -86,7 +86,6 @@ const ProductCard = (props) => {
   }
 
   return (
-    <div className="container">
       <Card style={{ height: '370px', width: '230px' }}>
         {photoImgs}
         <div>
@@ -115,7 +114,6 @@ const ProductCard = (props) => {
           </CardBody>
         </div>
       </Card>
-    </div>
   );
 };
 
