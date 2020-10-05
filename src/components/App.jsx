@@ -117,7 +117,7 @@ const App = () => {
         removeCompare();
       }
     }}>
-      <div className="ets-rp">
+      <div className="ets-rp offset-md-2">
         {comparison}
       </div>
       <div className="item">

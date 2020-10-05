@@ -60,8 +60,7 @@
 .ets-compare {
   position: absolute;
   top: 10rem;
-  left: 300px;
-  z-index: 99;
+  z-index: 100000;
   height: 400px;
   width: 500px;
   background-color: white;
