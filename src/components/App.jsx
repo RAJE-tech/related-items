@@ -117,7 +117,9 @@ const App = () => {
         removeCompare();
       }
     }}>
-      {comparison}
+      <div className="ets-rp">
+        {comparison}
+      </div>
       <div className="item">
         <h1 className="ets-title">Related Products</h1>
         <ItemDisplay ids={relatedIds} fav={false} handleActionBtn={handleActionBtn} />

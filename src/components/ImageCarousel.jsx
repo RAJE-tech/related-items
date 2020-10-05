@@ -59,8 +59,8 @@ const ImageCarousel = (props) => {
         interval={false}
       >
         {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} className="controls" />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={next} className="controls" />
+        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} className="ets-controls" />
+        <CarouselControl direction="next" directionText="Next" onClickHandler={next} className="ets-controls" />
       </Carousel>
     </div>
   );

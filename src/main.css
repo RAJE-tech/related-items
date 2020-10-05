@@ -60,7 +60,7 @@
 .ets-compare {
   position: absolute;
   top: 10rem;
-  left: 35%;
+  left: 300px;
   z-index: 99;
   height: 400px;
   width: 500px;
@@ -102,8 +102,12 @@
   color: red;
 }
 
-.controls {
+.ets-controls {
   position: absolute;
   top: 105px;
   height: 50px;
+}
+
+.ets-rp {
+  position: absolute;
 }
