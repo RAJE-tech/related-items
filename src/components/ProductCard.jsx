@@ -40,7 +40,6 @@ const ProductCard = (props) => {
   const getRatings = () => {
     axios.get(`http://52.26.193.201:3000/reviews/${props.id}/list`)
       .then((res) => {
-        console.log('Product ID: ', props.id);
         let total = 0; // sum of reviews
         let num = 0; // number of reviews
         const results = res.data.results;
@@ -72,22 +71,18 @@ const ProductCard = (props) => {
 
   let photoImgs;
   if (photos.length === 1) {
-    photoImgs = <CardImg className="ets-img" variant="top" src={photos[0].thumbnail_url} />;
+    photoImgs = <CardImg className="ets-img"variant="top" src={photos[0].thumbnail_url} />;
   } else {
-    photoImgs = <ImageCarousel photos={photos} />;
+    photoImgs = <ImageCarousel key={props.id} photos={photos} />;
   }
 
   let price;
   if (salesPrice === '0') {
-    price = <div>
-              {`$${ogPrice}`}
-            </div>
+    price = `$${ogPrice}`;
   } else {
-    price = <div>
-              <div>
-               <span className="ets-strike"> {`$${ogPrice}`} </span> <span className="ets-discount"> {`$${salesPrice}`} </span>
-              </div>
-            </div>
+    price = <p>
+              <span className="ets-strike"> {`$${ogPrice}`} </span> <span className="ets-discount"> {`$${salesPrice}`} </span>
+            </p>
   }
 
   return (

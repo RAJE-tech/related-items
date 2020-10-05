@@ -53,7 +53,10 @@ const ImageCarousel = (props) => {
         }
       </style>
       <Carousel
+        next={next}
+        previous={previous}
         activeIndex={activeIndex}
+        interval={false}
       >
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} className="controls" />
