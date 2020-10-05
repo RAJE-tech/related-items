@@ -1,27 +1,45 @@
-h1 {
+.ets-title {
   font-family: Helvetica;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   padding-top: 1.5rem;
   padding-bottom: 1.2rem;
+  padding-left: 1rem;
 }
 
 img {
-  width: 250px;
-  height: 250px;
+  width: 230px;
+  height: 230px;
   object-fit: cover;
 }
 
-.click-icon {
+.ets-star-outline {
   position: absolute;
-  top: .5rem;
-  right: 1rem;
+  top: .4rem;
+  right: .5rem;
 }
 
-.card-b {
+.ets-star-fill {
+  position: absolute;
+  top: .7rem;
+  right: .8rem;
+}
+
+.ets-remove-outline {
+  position: absolute;
+  top: .6rem;
+  right: .62rem;
+}
+.ets-remove-fill {
+  position: absolute;
+  top: .66rem;
+  right: .68rem;
+}
+
+.ets-card-b {
   padding: 10px
 }
 
-.text-pc {
+.ets-text-pc {
   font-family: Helvetica;
   font-size: .8rem;
   color: #5E5E5B;
@@ -29,12 +47,63 @@ img {
   padding-bottom: .3rem;
 }
 
-.title-pc {
+.ets-title-pc {
   font-size: .9rem;
   font-weight: bold;
   color: #343434;
 }
 
-.stars-pc {
+.ets-stars-pc {
   padding-top: .5em;
+}
+
+.ets-compare {
+  position: absolute;
+  top: 10rem;
+  left: 35%;
+  z-index: 99;
+  height: 400px;
+  width: 500px;
+  background-color: white;
+  border: 1px solid black;
+  font-family: Helvetica;
+}
+
+.ets-c-prodName {
+  font-weight: bold;
+}
+
+.ets-curr-n {
+  float: left;
+}
+
+.ets-comp-n {
+  align: right;
+}
+
+.ets-features {
+  padding-top: .8rem;
+}
+
+.ets-feat-row {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.ets-plus {
+  font-size: 2.5rem;
+}
+
+.ets-strike {
+  text-decoration: line-through;
+}
+.ets-discount {
+  padding-left: .3rem;
+  color: red;
+}
+
+.controls {
+  position: absolute;
+  top: 105px;
+  height: 50px;
 }

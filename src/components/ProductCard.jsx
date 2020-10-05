@@ -1,34 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Rating from '@material-ui/lab/Rating';
 import {
   Card,
   CardImg,
   CardText,
   CardBody,
 } from 'reactstrap';
+import ImageCarousel from './ImageCarousel.jsx';
 import ActionBtn from './ActionBtn.jsx';
+import Review from './Review.jsx';
 
 const ProductCard = (props) => {
-  // state vars
-  // images
   const [photos, setPhotos] = useState([{ thumbnail_url: '' }]);
-  // category
   const [category, setCat] = useState('');
-  // title
   const [title, setTitle] = useState('');
-  // style
-  const [style, setStyle] = useState('');
-  // Price
-  const [price, setPrice] = useState('');
-  // Rating
+  const [style, setStyle] = useState(''); // style name
+  const [ogPrice, setPrice] = useState('');
+  const [salesPrice, setSalesPrice] = useState('');
+  const [ratings, setRating] = useState([]);
 
   const getItemInfo = () => {
     axios.get(`http://52.26.193.201:3000/products/${props.id}`)
       .then((res) => {
         setCat(res.data.category);
         setTitle(res.data.name);
-        setPrice(res.data.default_price);
       });
   };
 
@@ -37,24 +32,70 @@ const ProductCard = (props) => {
       .then((res) => {
         setPhotos(res.data.results[0].photos);
         setStyle(res.data.results[0].name);
+        setPrice(res.data.results[0].original_price);
+        setSalesPrice(res.data.results[0].sale_price);
+      });
+  };
+
+  const getRatings = () => {
+    axios.get(`http://52.26.193.201:3000/reviews/${props.id}/list`)
+      .then((res) => {
+        console.log('Product ID: ', props.id);
+        let total = 0; // sum of reviews
+        let num = 0; // number of reviews
+        const results = res.data.results;
+
+        if (results.length === 0) {
+          setRating([...ratings, 0]);
+        } else {
+          let data = [];
+          results.forEach((obj) => {
+            data.push(obj.rating);
+          });
+          setRating([...ratings, ...data]);
+        }
       });
   };
 
   useEffect(() => {
     getItemInfo();
     getStyleInfo();
+    getRatings();
   }, []);
 
-  // if no imgage is found for a product
-  if (photos[0].thumbnail_url === null) {
-    photos[0].thumbnail_url = 'https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png';
+
+  photos.forEach((photo) => {
+    if (photo.thumbnail_url === null) {
+      photo.thumbnail_url = 'https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png';
+    }
+  });
+
+  let photoImgs;
+  if (photos.length === 1) {
+    photoImgs = <CardImg variant="top" src={photos[0].thumbnail_url} />;
+  } else {
+    photoImgs = <ImageCarousel photos={photos} />;
+  }
+
+  let price;
+  if (salesPrice === '0') {
+    price = <div>
+              {`$${ogPrice}`}
+            </div>
+  } else {
+    price = <div>
+              <div>
+               <span className="ets-strike"> {`$${ogPrice}`} </span> <span className="ets-discount"> {`$${salesPrice}`} </span>
+              </div>
+            </div>
   }
 
   return (
     <div className="container">
-      <Card style={{ height: '400px', width: '250px' }}>
+      <Card style={{ height: '370px', width: '230px' }}>
+        {photoImgs}
         <div>
-          <div className="click-icon" onClick={() => {
+          <div onClick={() => {
             if (props.fav === true) {
               props.handleActionBtn(props.id, false);
             } else {
@@ -63,22 +104,19 @@ const ProductCard = (props) => {
           }}>
             <ActionBtn fav={props.fav} />
           </div>
-          <CardImg variant="top" src={photos[0].thumbnail_url} />
         </div>
         <div>
-          <CardBody className="card-b">
-            <CardText className="text-pc">
+          <CardBody className="ets-card-b">
+            <CardText className="ets-text-pc">
               {category}
             </CardText>
-            <CardText className="text-pc title-pc">
+            <CardText className="ets-text-pc ets-title-pc">
               {title + ' ' + style}
             </CardText>
-            <CardText className="text-pc">
-              {`$${price}`}
+            <CardText className="ets-text-pc">
+              {price}
             </CardText>
-            <CardText className="text-pc stars-pc">
-              <Rating name="size-small" defaultValue={3} readOnly={true} size="small" />
-            </CardText>
+            <Review ratings={ratings} className="ets-text-pc ets-stars-pc" />
           </CardBody>
         </div>
       </Card>
