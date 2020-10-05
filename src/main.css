@@ -6,7 +6,7 @@
   padding-left: 1rem;
 }
 
-img {
+.ets-img {
   width: 230px;
   height: 230px;
   object-fit: cover;

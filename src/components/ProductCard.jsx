@@ -72,7 +72,7 @@ const ProductCard = (props) => {
 
   let photoImgs;
   if (photos.length === 1) {
-    photoImgs = <CardImg variant="top" src={photos[0].thumbnail_url} />;
+    photoImgs = <CardImg className="ets-img" variant="top" src={photos[0].thumbnail_url} />;
   } else {
     photoImgs = <ImageCarousel photos={photos} />;
   }

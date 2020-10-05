@@ -37,7 +37,7 @@ const ImageCarousel = (props) => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.thumbnail_url} alt="" />
+        <img className="ets-img" src={item.thumbnail_url} alt="" />
       </CarouselItem>
     );
   });
