@@ -9,13 +9,16 @@ import {
 
 const AddCard = (props) => {
   return (
-    <div className="container" onClick={props.addOutfit}>
+    <div onClick={props.addOutfit}>
       <Card style={{ height: '370px', width: '230px' }}>
-        <div className="col-sm d-flex align-items-center justify-content-center">
-          <div className="row text-center">
-            <span className="ets-plus">+</span>
+          <div className="col-sm d-flex align-items-center justify-content-center">
+            <div className="row text-center plus-div">
+              <span className="ets-plus">+</span>
+            </div>
+            <div className="row text-center ets-ato-div">
+              <span className="ets-ato">Add to Outfit</span>
+            </div>
           </div>
-        </div>
       </Card>
     </div>
   );
