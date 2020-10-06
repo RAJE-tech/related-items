@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ProductCard from './ProductCard.jsx';
 import ItemDisplay from './ItemDisplay.jsx';
 import OutfitDisplay from './OutfitDisplay.jsx';
 import CompareCard from './CompareCard.jsx';
 
 const App = () => {
-  const [currId, setCurr] = useState(96);
+  const [currId, setCurr] = useState(7);
   const [currName, setName] = useState('');
   const [compName, setCompName] = useState('');
   const [features, setFeat] = useState({});

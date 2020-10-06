@@ -1,3 +1,6 @@
+body {
+  background-color: #f1f1f1;
+}
 .ets-title {
   font-family: Helvetica;
   font-size: 1.2rem;
@@ -118,5 +121,32 @@
 
 .ets-ato-div {
   position: absolute;
-  top: 180px;
+  top: 185px;
+}
+
+.ets-custom-right {
+  position: absolute;
+  background-color: rgba(66, 66, 66, 0.5);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  right: 5px;
+  border: 0;
+  transition: all .5s;
+}
+.ets-custom-right:hover {
+  background: rgba(66, 66, 66, 0.8);
+}
+.ets-custom-left{
+  position: absolute;
+  background-color: rgba(66, 66, 66, 0.5);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  left: 2px;
+  border: 0;
+  transition: all .5s;
+}
+.ets-custom-left:hover {
+  background: rgba(66, 66, 66, 0.8);
 }

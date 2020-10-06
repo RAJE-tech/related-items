@@ -16,6 +16,18 @@ module.exports = {
           'css-loader',
         ],
       },
+      { // config for images
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+            }
+          }
+        ],
+      },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
@@ -27,7 +39,7 @@ module.exports = {
             }
           }
         ]
-      }
+      },
     ],
   },
   watch: true,
