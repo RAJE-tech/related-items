@@ -116,8 +116,8 @@ const App = () => {
         removeCompare();
       }
     }}>
-      <div className="ets-rp offset-md-2">
-        {comparison}
+      <div className="item">
+        <CompareCard show={compare} features={features} currName={currName} compName={compName} />
       </div>
       <div className="item">
         <h1 className="ets-title">Related Products</h1>

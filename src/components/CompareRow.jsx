@@ -23,13 +23,13 @@ const CompareRow = (props) => {
 
   return (
     <div className="row ets-feat-row">
-      <div className="col-sm text-left">
+      <div className="col text-left">
         {curr}
       </div>
-      <div className="col- text-center">
+      <div className="col text-center">
         {props.char}
       </div>
-      <div className="col-sm text-right">
+      <div className="col text-right">
         {comp}
       </div>
     </div>

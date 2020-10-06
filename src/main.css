@@ -61,18 +61,12 @@ body {
 }
 
 .ets-compare {
-  position: absolute;
-  top: 10rem;
-  z-index: 100000;
-  height: 400px;
-  width: 500px;
-  background-color: white;
-  border: 1px solid black;
-  font-family: Helvetica;
+  font-size: 18px
 }
 
 .ets-c-prodName {
   font-weight: bold;
+  font-size: 16px
 }
 
 .ets-curr-n {
@@ -85,11 +79,13 @@ body {
 
 .ets-features {
   padding-top: .8rem;
+  font-size: 12px;
 }
 
 .ets-feat-row {
   padding-top: .5rem;
   padding-bottom: .5rem;
+  font-size: 12px;
 }
 
 .ets-strike {
