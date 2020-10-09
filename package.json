@@ -10,7 +10,9 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "webpack -d --watch"
+    "build": "webpack -d --watch",
+    "start": "node server.js",
+    "pbuild": "webpack -p"
   },
   "repository": {
     "type": "git",

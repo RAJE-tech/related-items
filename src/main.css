@@ -2,7 +2,6 @@ body {
   background-color: #f1f1f1;
 }
 .ets-title {
-  font-family: Helvetica;
   font-size: 1.2rem;
   padding-top: 1.5rem;
   padding-bottom: 1.2rem;
@@ -43,7 +42,6 @@ body {
 }
 
 .ets-text-pc {
-  font-family: Helvetica;
   font-size: .8rem;
   color: #5E5E5B;
   margin: 0px;
@@ -79,13 +77,13 @@ body {
 
 .ets-features {
   padding-top: .8rem;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .ets-feat-row {
   padding-top: .5rem;
   padding-bottom: .5rem;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .ets-strike {
