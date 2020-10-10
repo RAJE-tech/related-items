@@ -1,28 +1,8 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import CustomRightArrow from './CustomRightArrow.jsx';
+import CustomLeftArrow from './CustomLeftArrow.jsx';
 import ProductCard from './ProductCard.jsx';
-
-const CustomRightArrow = ({ onClick }) => {
-  // onMove means if dragging or swiping in progress.
-  return (
-    <button className="ets-custom-right" onClick={() => onClick()}>
-      <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-chevron-right" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-      </svg>
-    </button>
-  );
-};
-const CustomLeftArrow = ({ onClick }) => {
-  // onMove means if dragging or swiping in progress.
-  return (
-    <button className="ets-custom-left" onClick={() => onClick()}>
-      <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-chevron-left" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-      </svg>
-    </button>
-  );
-};
 
 const ItemDisplay = (props) => {
   const responsive = {
@@ -31,12 +11,17 @@ const ItemDisplay = (props) => {
       items: 4,
     },
     tablet: {
-      breakpoint: { max: 1199, min: 773 },
+      breakpoint: { max: 1199, min: 768 },
       items: 3,
     },
     mobile: {
-      breakpoint: { max: 772, min: 0 },
+      breakpoint: { max: 767, min: 500 },
       items: 2,
+    },
+    mobile2: {
+      breakpoint: { max: 499, min: 0 },
+      items: 1,
+      partialVisibilityGutter: 100,
     },
   };
 
@@ -45,14 +30,14 @@ const ItemDisplay = (props) => {
       <Carousel
         customRightArrow={<CustomRightArrow />}
         customLeftArrow={<CustomLeftArrow />}
-        swipeable={false}
+        swipeable={true}
         draggable={false}
         responsive={responsive}
         ssr={true} // means to render carousel on server-side.
         infinite={false}
         keyBoardControl={true}
-        containerClass="carousel-container"
-        itemClass="carousel-item-padding-40-px"
+        removeArrowOnDeviceType={["mobile2"]}
+        partialVisible={true}
       >
 
         {props.ids.map((id) =>

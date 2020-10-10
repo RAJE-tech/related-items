@@ -86,7 +86,7 @@ const ProductCard = (props) => {
   }
 
   return (
-      <Card style={{ height: '370px', width: '230px' }}>
+      <Card className="ets-card">
         {photoImgs}
         <div>
           <div onClick={() => {

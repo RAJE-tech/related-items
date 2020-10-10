@@ -26,7 +26,7 @@ const CompareRow = (props) => {
       <div className="col text-left">
         {curr}
       </div>
-      <div className="col text-center">
+      <div className="col text-center ets-feat-bld">
         {props.char}
       </div>
       <div className="col text-right">

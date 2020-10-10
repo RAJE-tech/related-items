@@ -1,6 +1,7 @@
 body {
   background-color: #f1f1f1;
 }
+
 .ets-title {
   font-size: 1.2rem;
   padding-top: 1.5rem;
@@ -83,7 +84,11 @@ body {
 .ets-feat-row {
   padding-top: .5rem;
   padding-bottom: .5rem;
-  font-size: 14px;
+  font-size: 13px;
+}
+
+.ets-feat-bld {
+  font-weight: bold;
 }
 
 .ets-strike {
@@ -106,7 +111,7 @@ body {
 
 .plus-div {
   position: absolute;
-  top: 130px;
+  top: 140px;
 }
 
 .ets-plus {
@@ -115,7 +120,7 @@ body {
 
 .ets-ato-div {
   position: absolute;
-  top: 185px;
+  top: 190px;
 }
 
 .ets-custom-right {
@@ -127,6 +132,7 @@ body {
   right: 5px;
   border: 0;
   transition: all .5s;
+  outline: none !important;
 }
 .ets-custom-right:hover {
   background: rgba(66, 66, 66, 0.8);
@@ -140,7 +146,13 @@ body {
   left: 2px;
   border: 0;
   transition: all .5s;
+  outline: none !important;
 }
 .ets-custom-left:hover {
   background: rgba(66, 66, 66, 0.8);
+}
+
+.ets-card {
+  height: 370px;
+  width: 230px;
 }

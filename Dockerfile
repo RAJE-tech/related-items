@@ -6,9 +6,7 @@ WORKDIR /src/related_items
 
 COPY . /src/related_items
 
-run npm install
-
-RUN npm run pbuild
+RUN npm install
 
 EXPOSE 3002
 
