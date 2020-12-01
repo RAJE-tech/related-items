@@ -7,5 +7,8 @@
 * Reactstrap
 * MaterialUI
 * Express
+
 **Compiled and Transpiled With**
+* Webpack
+* Babel
 ## Installation
